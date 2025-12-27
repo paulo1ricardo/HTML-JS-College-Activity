@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Reclamações</title>
+    </head>
+    <script type="text/javascript">
+
+        function enviar() {
+            var comentario = document.getElementById('comentario').value.trim();
+            var nome = document.getElementById('nome2').value.trim();
+
+            if (comentario === "" || nome === "") {
+                alert('❌ Você precisa preencher seu nome e o formulário antes de enviar!');
+                return false;
+            }
+
+            alert('✅ Seu comentário foi enviado! Esperamos poder resolver seu problema.');
+            return true;
+        }
+    </script>
+    
+        <body bgcolor="99ffcc">
+            <FORM>
+                <p>
+                <label><FONT FACE="Arial"><u>Nome Completo</u></FONT></label></br>
+                <input type="text" id="nome2" name="nome" placeholder="Insira seu nome completo"/> 
+                </p>
+
+                <p>
+                <label><FONT FACE="Arial"><u>Digite sua Reclamação</u></FONT></label></br>
+                <textarea size="30%"placeholder="Seja claro e Objetivo" id="comentario"></textarea>
+                </p> 
+    
+                <p>
+                <input type="button" value="Enviar" onclick="enviar()"> <input type="reset" name="reset" value="limpar" />
+                </p>
+
+            </FORM>
+        </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Agendamento</title>
+    <script type="text/javascript">
+        
+        function precoValue() {
+            var tipo = document.getElementById('tipo').value;
+            var preco = 0;
+
+            if (tipo === "Comum")
+                preco = 50;
+            else if (tipo === "Delicada")
+                preco = 75;
+            else if (tipo === "Rápida (pouca roupa)")
+                preco = 40;
+            else if (tipo === "Premium")
+                preco = 100;
+            return preco;
+        }
+        
+        function agendar() {
+            var nome = document.getElementById('nome').value.trim();
+            var tipo = document.getElementById('tipo').value;
+            var data = document.getElementById('data').value;
+            
+            
+            if (nome === "" || tipo === "Nenhum" || data === "") {
+                alert('❌ Para agendar você deve preencher todas as informações corretamente!');
+                return false;
+            }
+            
+            var preco = precoValue()
+            
+            alert('Olá 👋, ' + nome + '! Sua lavagem do tipo "' + tipo + '" foi agendada para o dia ' + data + '✅ . O preço da Lavagem sera, R$' + preco + '💸 .')
+            
+            return true;
+        }
+    </script>
+</head>
+<body bgcolor="ff99ff">
+    <p align="center">
+        <font face="Arial"><b>Agende Aqui a sua Lavagem</b></font>
+    </p>
+
+    <form align="center">
+        <table border="0" width="30%" align="center">
+        <tr>
+        <td align="center">
+        <table border="3" width="30%" bgcolor="white">
+            <tr><td>
+            <p>
+            <label>Seu Nome Completo</label> <br/>
+            <input type="text" id="nome" name="nome" placeholder="Insira seu nome completo"/> 
+            </p>
+    
+            <p>
+            <label>Tipo de Lavagem</label> <br/>
+            <select id="tipo" name="tipo">
+                <option>Nenhum</option>
+                <option>Comum</option>
+                <option>Delicada</option>
+                <option>Rápida (pouca roupa)</option>
+                <option>Premium</option>
+            </select>
+            </p>
+
+            <p>
+            <label>Data</label> <br/>
+            <input type="date" id="data" name="data"/> 
+            </p>
+
+            <p>
+            <input type="button" value="Agendar" onclick="agendar()">
+            </p>
+            
+            </td></tr>
+        </table>
+
+    </form>
+</body>
+</html>
+
+ 
+              
